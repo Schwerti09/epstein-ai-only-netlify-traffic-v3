@@ -1,0 +1,18 @@
+[build]
+  publish = "site"
+  command = "npm run build"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Keep deep links working (doesn't override existing files)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

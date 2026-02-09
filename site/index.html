@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Epstein Files – AI Newsroom Index</title>
+  <meta name="description" content="AI Newsroom Index: öffentliche Quellen + KI‑Leseführung. Premium schaltet Deep Summaries frei (ab 4,99€).">
+  <link rel="icon" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="canonical" href="/">
+  <link rel="search" type="application/opensearchdescription+xml" title="Epstein Files AI" href="/opensearch.xml">
+  <meta property="og:title" content="Epstein Files – AI Newsroom Index">
+  <meta property="og:description" content="Öffentliche Quellen + KI‑Zusammenfassung. Premium: Deep Summary.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/api/og?title=EPSTEIN%20FILES&subtitle=AI%20Newsroom%20Index">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/api/og?title=EPSTEIN%20FILES&subtitle=AI%20Newsroom%20Index">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="badge"><span class="dot"></span><strong>Live</strong> · <span id="today"></span></div>
+        <div class="badge">
+          <a class="btn" href="/topics/">Topics</a>
+          <span class="sep">·</span>
+          <span class="muted">Index + Quellenlinks. Keine Volltexte.</span>
+          <span class="sep">·</span>
+          Status: <span id="authState">Gast</span> · <a href="#" id="logoutBtn" style="display:none">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">
+          <h1>EPSTEIN FILES</h1>
+          <small>AI Newsroom: Quellen bündeln · Relevanz extrahieren · Leseführung liefern</small>
+        </div>
+        <div class="split">
+          <a class="btn" href="/impressum.html">Impressum</a>
+          <a class="btn" href="/datenschutz.html">Datenschutz</a>
+          <a class="btn primary" href="#pricing">Premium ab €4,99</a>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navigation">
+        <a href="/">Start</a>
+        <a href="/topics/">Topics</a>
+        <a href="#search">Suche</a>
+        <a href="#brief">Briefing</a>
+        <a href="#pricing">Preise</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <section class="card pad" id="search">
+        <div class="kicker">Recherche</div>
+        <div class="h1">Suche. Klick. Versteh.</div>
+        <p class="p muted">
+          Wir ziehen aktuelle Treffer aus öffentlichen News‑Feeds und lassen Gemini die „Story“ destillieren:
+          was neu ist, was relevant ist, was du als Nächstes lesen solltest.
+        </p>
+
+        <div class="searchbar">
+          <input id="q" placeholder="z.B. 'unsealed documents', 'court docket', 'maxwell appeal' ..." autocomplete="off">
+          <button class="btn primary" id="go">Suchen</button>
+          <a class="btn" href="/api/health" target="_blank" rel="noreferrer">API Health</a>
+        </div>
+
+        <div class="hr"></div>
+
+        <div id="resultState" class="muted">Gib eine Suche ein.</div>
+        <div id="summaryBox" style="margin-top:12px"></div>
+        <div id="stories"></div>
+      </section>
+
+      <aside class="card pad">
+        <div class="kicker">Programmatic SEO</div>
+        <div class="h2">Statische Landingpages</div>
+        <p class="p muted">
+          Für Traffic bauen wir dutzende Topic‑Seiten: schnell, indexierbar, intern verlinkt.
+          Jede Seite hat eine statische Preview + Live‑KI‑Recherche.
+        </p>
+        <div class="chips" style="margin-top:10px">
+          <a class="chip" href="/topics/">Alle Topics ansehen</a>
+          <a class="chip" href="/sitemap.xml">Sitemap</a>
+          <a class="chip" href="/robots.txt">Robots</a>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="kicker" id="pricing">Premium</div>
+        <div class="p muted">Simpel, klar, wiederkehrend.</div>
+        <div class="premiumLock" style="margin-top:10px">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
+            <div>
+              <div style="font-weight:900;font-size:20px">€4,99 / Monat</div>
+              <div class="muted" style="font-size:13px">Deep Summary • 25 Treffer • bessere Leseführung</div>
+            </div>
+            <button class="btn primary" id="subscribeBtn">Unlock</button>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="notice">
+          <strong>Hinweis:</strong> KI kann Fehler machen. Wir liefern Leseführung, keine endgültigen Behauptungen. Prüfe immer die Quellen.
+        </div>
+      </aside>
+    </div>
+
+    <section class="card pad" id="brief" style="margin-top:18px">
+      <div class="kicker">Briefing</div>
+      <div class="h2">Wie du hier schnell zu Substanz kommst</div>
+      <p class="p muted">
+        1) Du suchst ein Stichwort. 2) Du bekommst sofort Quellenlinks + KI‑Zusammenfassung.
+        3) Premium entsperrt Deep Summary & mehr Treffer. Wir hosten keine Volltexte.
+      </p>
+    </section>
+
+    <div class="footer">
+      <div class="container" style="padding:0">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
+          <div>© <span id="yearNow"></span> Wissens‑Bank.</div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="/impressum.html">Impressum</a>
+            <a href="/datenschutz.html">Datenschutz</a>
+            <a href="/agb.html">AGB</a>
+            <a href="/topics/">Topics</a>
+          </div>
+        </div>
+        <div class="muted" style="margin-top:10px; line-height:1.5">
+          Hinweis: Wir hosten keine urheberrechtlich geschützten Inhalte Dritter. Wir verlinken auf öffentlich zugängliche Quellen und erstellen Zusammenfassungen/Leseführung.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/app.js"></script>
+
+<!-- Deployed with Zip-Ship -->
+<div id="zipship-badge" style="position:fixed;bottom:12px;right:12px;z-index:9999;font-family:system-ui,sans-serif;font-size:12px;">
+  <a href="https://zip-ship-revolution.com/?utm_source=user_site" target="_blank" rel="noopener" 
+     style="display:flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(10,14,39,0.85);color:#00F0FF;text-decoration:none;border-radius:6px;border:1px solid rgba(0,240,255,0.3);backdrop-filter:blur(8px);transition:all 0.2s;">
+    <span style="font-size:14px;">⚡</span>
+    <span>Deployed with Zip-Ship</span>
+  </a>
+</div>
+</body>
+</html>
